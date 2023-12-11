@@ -17,4 +17,17 @@ public class PriceHolder : ScriptableObject
     {
         priceValues.RemoveAt(priceValues.Count - 1);
     }
+
+
+    [Button]
+    public void ResetData()
+    {
+        foreach (var prices in priceValues)
+        {
+            foreach (var price in prices.priceAndValueList)
+            {
+                price.isReached = false;
+            }
+        }
+    }
 }

@@ -12,19 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb7209e3d961de449c14847baf3024b, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  fakeLevelIndex: 1
+  fakeLevelIndex: 0
   realLevelIndex: 0
   levelLoopValue: 1
   finiteTutorial: 0
   tutorialLevelCount: 3
-  totalMoneyAmount: 0
-  upgradeValues:
-  - currentUpgradeLevel: 0
-    totalUpgradeGainValue: 0
-    isMaximized: 0
-  - currentUpgradeLevel: 0
-    totalUpgradeGainValue: 0
-    isMaximized: 0
-  - currentUpgradeLevel: 0
-    totalUpgradeGainValue: 0
-    isMaximized: 0
+  totalMoneyAmount: 10

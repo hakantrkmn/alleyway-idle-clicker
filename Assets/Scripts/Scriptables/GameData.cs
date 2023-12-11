@@ -16,7 +16,7 @@ public class GameData : ScriptableObject
     public int tutorialLevelCount;
 
 
-    [BoxGroup("Total Money")] public int totalMoneyAmount;
+    [BoxGroup("Total Money")] public float totalMoneyAmount;
     
 
 

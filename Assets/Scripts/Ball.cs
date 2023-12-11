@@ -1,59 +1,79 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Random = UnityEngine.Random;
 
 public class Ball : MonoBehaviour
 {
-    private Rigidbody rb;
-    public float throwForce;
-    private Vector3 lastFrameVelocity;
-    public float minSpeed;
+    public float damage;
+    public float moveSpeed;
     private Vector3 direction;
-    
+    public float incomeAmount;
+    public int level;
     public void ThrowBall()
     {
-        rb = GetComponent<Rigidbody>();
-
-        Vector3 force = Random.onUnitSphere*throwForce;
-        force.z = 0;
-        rb.AddForce(force,ForceMode.VelocityChange);
-        minSpeed = force.magnitude;
+        direction = new Vector3(Random.Range(-1f,1f), Random.Range(-1f,1f), 0);
+        
     }
+
     
-    private void Update()
+    private void OnEnable()
     {
-        lastFrameVelocity = rb.velocity;
+        EventManager.IdleButtonClicked += IdleButtonClicked;
+    }
 
-        if (Input.GetMouseButtonDown(0))
+    private void OnDisable()
+    {
+        EventManager.IdleButtonClicked -= IdleButtonClicked;
+    }
+
+    private void IdleButtonClicked(IncrementalButtonTypes type, float amount)
+    {
+        if (type==IncrementalButtonTypes.Income)
         {
-            DOTween.Complete(this);
-            minSpeed += 3;
-            DOVirtual.Float(minSpeed, minSpeed - 3, .3f, (x =>
-            {
-                minSpeed = x;
-                rb.velocity = direction * minSpeed;
-            })).SetId(this).OnComplete(() =>
-            {
-                rb.velocity = direction * minSpeed;
-
-            });
+            incomeAmount *= 1.1f;
+        }
+        else if (type==IncrementalButtonTypes.Speed)
+        {
+            moveSpeed *= 1.1f;
         }
     }
+
+    private void Update()
+    {
+        transform.position += direction * (moveSpeed * Time.deltaTime);
+
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        {
+            DOTween.Complete(this);
+            moveSpeed += 3;
+            DOVirtual.Float(moveSpeed, moveSpeed - 3, .3f, (x =>
+            {
+                moveSpeed = x;
+            })).SetId(this);
+        }
+    }
+
+   
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.GetComponent<Brick>())
         {
             Bounce(collision.contacts[0].normal);
-            collision.transform.GetComponent<Brick>().TakeDamage(10);
+            collision.transform.GetComponent<Brick>().TakeDamage(damage);
+            EventManager.EarnMoney(incomeAmount);
         }
     }
     
     private void Bounce(Vector3 collisionNormal)
     {
-        direction = Vector3.Reflect(lastFrameVelocity.normalized, collisionNormal);
-        rb.velocity = direction * minSpeed;
+        direction = Vector3.Reflect(direction, collisionNormal);
+        direction = direction.normalized;
     }
 
-    
+  
 }

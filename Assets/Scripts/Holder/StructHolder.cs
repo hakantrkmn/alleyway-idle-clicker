@@ -30,6 +30,7 @@ public class IncrementalIdleValues
 public class PriceHolderStruct
 {
     public string name;
+    public IncrementalButtonTypes type;
     public List<PriceAnodValue> priceAndValueList = new List<PriceAnodValue>();
 
     public PriceHolderStruct(string _name, int _length, int _multiplier)
@@ -46,7 +47,7 @@ public class PriceAnodValue
 {
     public int requiredMoneyValue;
     public float upgradeAmount;
-
+    public bool isReached;
     public PriceAnodValue(int _requiredMoneyValue, float _upgradeAmount)
     {
         this.requiredMoneyValue = _requiredMoneyValue;

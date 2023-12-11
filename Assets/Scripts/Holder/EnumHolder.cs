@@ -6,7 +6,13 @@
     PauseLevel,
     ResetProgressData,
 }
-
+public enum IncrementalButtonTypes
+{
+    AddBall,
+    Speed,
+    Income,
+    Merge,
+}
 public enum InGamePanelTypes
 {
     OnlyLevel,

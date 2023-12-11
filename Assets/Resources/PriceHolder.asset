@@ -13,39 +13,156 @@ MonoBehaviour:
   m_Name: PriceHolder
   m_EditorClassIdentifier: 
   priceValues:
-  - name: UpgradeButton1
+  - name: Income
+    type: 2
+    priceAndValueList:
+    - requiredMoneyValue: 10
+      upgradeAmount: 0
+      isReached: 1
+    - requiredMoneyValue: 20
+      upgradeAmount: 0
+      isReached: 1
+    - requiredMoneyValue: 30
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 40
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 50
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 70
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 90
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 100
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 130
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 170
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 200
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 250
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 300
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 350
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 400
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 450
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 500
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 600
+      upgradeAmount: 0
+      isReached: 0
+  - name: AddBall
+    type: 0
     priceAndValueList:
     - requiredMoneyValue: 10
       upgradeAmount: 1
-    - requiredMoneyValue: 20
-      upgradeAmount: 2
+      isReached: 1
     - requiredMoneyValue: 30
+      upgradeAmount: 2
+      isReached: 0
+    - requiredMoneyValue: 60
       upgradeAmount: 3
-    - requiredMoneyValue: 40
+      isReached: 0
+    - requiredMoneyValue: 120
       upgradeAmount: 4
-    - requiredMoneyValue: 50
+      isReached: 0
+    - requiredMoneyValue: 200
       upgradeAmount: 5
-  - name: UpgradeButton2
+      isReached: 0
+    - requiredMoneyValue: 300
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 400
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 600
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 800
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 900
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 1000
+      upgradeAmount: 0
+      isReached: 0
+  - name: Speed
+    type: 1
     priceAndValueList:
     - requiredMoneyValue: 10
       upgradeAmount: 1
+      isReached: 1
     - requiredMoneyValue: 20
       upgradeAmount: 2
+      isReached: 1
     - requiredMoneyValue: 30
       upgradeAmount: 3
+      isReached: 0
     - requiredMoneyValue: 40
       upgradeAmount: 4
+      isReached: 0
     - requiredMoneyValue: 50
       upgradeAmount: 5
-  - name: UpgradeButton3
+      isReached: 0
+    - requiredMoneyValue: 60
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 70
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 80
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 90
+      upgradeAmount: 0
+      isReached: 0
+  - name: Merge
+    type: 3
     priceAndValueList:
-    - requiredMoneyValue: 10
-      upgradeAmount: 1
-    - requiredMoneyValue: 20
-      upgradeAmount: 2
-    - requiredMoneyValue: 30
-      upgradeAmount: 3
-    - requiredMoneyValue: 40
-      upgradeAmount: 4
     - requiredMoneyValue: 50
-      upgradeAmount: 5
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 100
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 150
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 200
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 300
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 400
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 500
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 600
+      upgradeAmount: 0
+      isReached: 0
+    - requiredMoneyValue: 700
+      upgradeAmount: 0
+      isReached: 0
